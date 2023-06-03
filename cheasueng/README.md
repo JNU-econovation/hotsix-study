@@ -25,7 +25,7 @@ typescript를 적용한 상태에서 poet의 없는 프로퍼티인 end를 출�
 1. 객체 타입 선언
 
     ```jsx
-    let peorLater: {
+    let peotLater: {
      born: number;
      name: string;
     }
@@ -47,18 +47,17 @@ typescript를 적용한 상태에서 poet의 없는 프로퍼티인 end를 출�
     각 객체마다 타입을 적는 것보다 별칭을 적어서 더 읽기 쉽게 만들 수 있다.
 
     > Learning Typescript에서는 인터페이스를 좀 더 사용 하는 추세라고 한다.
-    >
 
 ### 4.2 구조적 타이핑
 
 타입을 모두 충족한다면 해당 타입의 값으로 사용 할 수 있다.
 
 ```jsx
-type WidthFirstName = {
+type WithFirstName = {
  firstName: string;
 }
 
-type WidthLastName = {
+type WithLastName = {
  lastName: string;
 }
 
@@ -68,7 +67,7 @@ const hasBoth = {
 }
 
 let withFirstName: WithFirstName = hasBoth;
-let withLastName: WithLastNAme = hasBoth;
+let withLastName: WithLastName = hasBoth;
 // 위 두개는 오류가 나지 않는다.
 ```
 
@@ -121,12 +120,12 @@ let withLastName: WithLastNAme = hasBoth;
     JSON생각하면 있어야 한다. 말그대로 중첩된 객체이다.
 
     ```jsx
-    type Poem = {
+    type Poet = {
+     fullName: string;
      author: {
       firstname: string;
       lastName: string;
      };
-     name = string;
     };
     ```
 
