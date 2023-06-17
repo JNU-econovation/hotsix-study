@@ -1,6 +1,6 @@
 # [인터페이스](https://www.typescriptlang.org/docs/handbook/interfaces.html)
 
-인터페이스는 type과 비해 더 빠른 컴파일러 성능, 클래스와 더 나은객체 상호 운용성을 위해 상용이 된다.
+인터페이스는 type과 비해 더 빠른 컴파일러 성능, 클래스와 더 나은객체 상호 운용성을 위해 사용이 된다.
 
 ## 7.1 타입 별칭 vs 인터페이스
 
@@ -18,7 +18,7 @@ interface도 type처럼 선택적 속성을 가질 수 있다.
 
 ### 7.2.2 읽기 전용 속성
 
-읽기 전용으로 만들어주는 readonly속성이 있다. typescript에서만 작동하는 것을 막는다.
+읽기 전용으로 만들어주는 readonly속성이 있다. typescript에서만 작동하며, 혹시 모르게 돌아갈 것을 막는다.
 
 ### 7.2.3 함수와 메서드
 
@@ -60,7 +60,7 @@ let hasCallCount: FunctionWithCount;
 
 function KeepTrackOfCalls() {
   keepTrackOfCalls.count += 1;
-  console.log(`'i;ve been called ${keepsTrackOfCalls.count} times!`);
+  console.log(`'i've been called ${keepsTrackOfCalls.count} times!`);
 }
 
 keepsTrackOfCalls.count = 0;
