@@ -16,12 +16,23 @@ console.log(typeof 3); // number
 class Human {
   name: string;
   age: number;
+  gender: string;
+  constructor() {
+    this.name = "human name";
+    this.age = 0;
+    this.gender = "man";
+  }
 }
 
 class Student {
-  name: stirng;
+  name: string;
   age: number;
   school: string;
+  constructor() {
+    this.name = "school name";
+    this.age = 0;
+    this.school = "school!!!";
+  }
 }
 
 function isHuman(arg: Human | Student) {
@@ -47,21 +58,27 @@ isHuman(student); // false
 class Human {
   name: string;
   age: number;
+  gender: string;
+  constructor() {
+    this.name = "human name";
+    this.age = 0;
+    this.gender = "man";
+  }
 }
 
 class Student {
-  name: stirng;
+  name: string;
   age: number;
   school: string;
+  constructor() {
+    this.name = "school name";
+    this.age = 0;
+    this.school = "school!!!";
+  }
 }
 
-interface Response {
-  type: string;
-  body: Human | Student;
-}
-
-function getShcool(arg: any): arg is Student {
-  return arg.school;
+function getSchool(arg: any): arg is Student {
+  return typeof arg.school === "string";
 }
 ```
 
