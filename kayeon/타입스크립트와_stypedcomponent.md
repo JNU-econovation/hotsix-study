@@ -1,6 +1,6 @@
-## styped-component 에 타입 지정하기
+## styled-component 에 타입 지정하기
 
-해커톤에 사용한 코드들을 타입스크립트로 마이그레이션 해 보고 싶었는데, 해커톤은 아무래도 스타일이 중요하다보니 styped-component 관련 코드들이 많았다. 그래서 typescript에서 styped-component를 사용 하는 방법에 알아보았고, 추가로 전체적인 테마를 설정하는 방법에 대해 공부해보았다.
+해커톤에 사용한 코드들을 타입스크립트로 마이그레이션 해 보고 싶었는데, 해커톤은 아무래도 스타일이 중요하다보니 styled-component 관련 코드들이 많았다. 그래서 typescript에서 styped-component를 사용 하는 방법에 알아보았고, 추가로 전체적인 테마를 설정하는 방법에 대해 공부해보았다.
 
 `npx create-react-app 디렉토리명 --template typescript`
 
