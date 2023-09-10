@@ -1,10 +1,10 @@
 ## styled-component 에 타입 지정하기
 
-해커톤에 사용한 코드들을 타입스크립트로 마이그레이션 해 보고 싶었는데, 해커톤은 아무래도 스타일이 중요하다보니 styled-component 관련 코드들이 많았다. 그래서 typescript에서 styped-component를 사용 하는 방법에 알아보았고, 추가로 전체적인 테마를 설정하는 방법에 대해 공부해보았다.
+해커톤에 사용한 코드들을 타입스크립트로 마이그레이션 해 보고 싶었는데, 해커톤은 아무래도 스타일이 중요하다보니 styled-component 관련 코드들이 많았다. 그래서 typescript에서 styled-component를 사용 하는 방법에 알아보았고, 추가로 전체적인 테마를 설정하는 방법에 대해 공부해보았다.
 
 `npx create-react-app 디렉토리명 --template typescript`
 
-`npm i styled-component`
+`npm i styled-components`
 
 `npm i -D @types/styled-components`
 
@@ -62,11 +62,10 @@ d.ts파일은 기존 JavaScript로 만들어진 모듈들을 TypeScript 환경�
 다크모드를 하고 싶은 경우, 혹은 그 외에도 공통으로 들어가게 되는 스타일을 지정하고 싶을 때 사용한다.
 
 ```js
-import styled from "styled-components";
-//styled-components 만 불러오면 defaultTheme를 사용할 수 있다.
+import { defaultTheme } from "styled-components";
 export const theme: defaulTheme = {
   dark: {
-    backrounds: `#333`,
+    backgrounds: `#333`,
     main: `rgba(255,255,255,0.85)`,
     other: `rgba(255,255,255,0.65)`,
   },
