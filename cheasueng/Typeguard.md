@@ -1,6 +1,6 @@
-# typescript의 Gard방법
+# typescript의 guard방법
 
-typescript는 type gard방법이 여러가지입니다.  
+typescript는 type guard방법이 여러가지입니다.  
 이미 javascript에서도 타입가드를 지원하고 있는데 이는 instanceof typeof등 입니다.
 
 ### 여기서 typeof는 type에 대한 값을 string으로 반환 합니다.
@@ -103,7 +103,6 @@ satifies는 ts버전 4.9에서 사용하는 아이로서 as와 비슷하게 upca
 
 ```ts
 const variable1 = { grade: "a", score: 90 } satisfies { grade: string };
-// error
 const variable2 = { grade: "a", score: 90 } satisfies {
   grade: string;
   score: number;
@@ -113,10 +112,9 @@ const variable3 = {
   key: { grade: "a", score: 90 } satisfies { grade: string },
 };
 const variable4 = {
-  key: { grade: "a", score: 90 } satisfies { grade: string },
+  key: { grade: "a", score: 90 } satisfies { score: number },
 };
 const variable5 = {
-  // error
   key: { grade: "a", score: 90 } satisfies {
     grade: string;
     score: number;
@@ -185,4 +183,4 @@ if (me.hasOwnProperty("toString")) {
 }
 ```
 
-[[satifies](https://engineering.ab180.co/stories/satisfies-safe-upcasting)
+[satifies](https://engineering.ab180.co/stories/satisfies-safe-upcasting)
