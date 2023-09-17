@@ -41,7 +41,7 @@ function printMessage(message?: string) {
 +)
 
 https://typescript-eslint.io/rules/prefer-nullish-coalescing/
-여기서 널 병합 연산자와 config 설정 관련 예제를 확인할 수 있다.
+여기서 널 병합 연산자와 config 설정 관련 예제를 확인할 수 있다
 
 ---
 
