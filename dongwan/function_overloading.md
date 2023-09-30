@@ -36,9 +36,14 @@ function padding(a: number, b?: number, c?: number, d?: any) {
 
 ```tsx
 //선언부
-function padding(all: number);
-function padding(topAndBottom: number, leftAndRight: number);
-function padding(top: number, right: number, bottom: number, left: number);
+function padding(all: number): Padding;
+function padding(topAndBottom: number, leftAndRight: number): Padding;
+function padding(
+  top: number,
+  right: number,
+  bottom: number,
+  left: number
+): Padding;
 //구현부
 function padding(a: number, b?: number, c?: number, d?: number) {
   if (b === undefined && c === undefined && d === undefined) {
