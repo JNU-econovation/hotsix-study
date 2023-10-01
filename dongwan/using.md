@@ -8,7 +8,7 @@
 ### 기존의 자원해제
 
 ```tsx
-async function getusers() {
+async function getUsers() {
   const db = await getDb();
   const users = await db.query("SELECT id FROM users");
   await db.close();
@@ -49,11 +49,14 @@ main();
 using키워드를 사용하기 위해서는 변수가 폐기될 때 실행될 **Symbol.dispose**함수를 작성해야한다.
 
 ```tsx
-function main() {
-	using myRsource = getResource();
-	console.log(myResource.data);
+function getResource() {
+	return {
+		data: 'start'
+		[Symbol.dispose]: ()=> {
+			console.log('end')
+		}
+	}
 }
-main();
 ```
 
 이와 같이 코드가 짜여진 경우 main함수가 완료되고 myResource 변수가 블록을벗어나면 JS는 자동으로 **Symbol.dispose**안의 코드를 실행해 end를 출력한다.
@@ -76,6 +79,6 @@ async function getDb() {
 
 얼핏 보면 그냥 새로운 JS키워드가 추가된 것 같은데 이게 왜 5.2부터 지원되는 TS버전의 키워드인지 궁금해서 구글링 했는데 별 내용이 나오지 않았다.
 
-![example](/dongwan/img/usingExample.png)
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f9d7fb1e-3137-4377-bcf6-ffc91ab408c5/746b3fc3-3d38-4dfe-b838-69c25e1a37c3/Untitled.png)
 
 나중에 문서가 제대로 나오면 찾아보자..!
