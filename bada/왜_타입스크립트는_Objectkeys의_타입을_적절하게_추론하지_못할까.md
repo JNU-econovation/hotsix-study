@@ -17,7 +17,7 @@ function validateOptions(options: Options) {
 
 ![image1](./images/keys_1.png)
 
-`option` 키를 사용하여 `options`에 접근하려고 하지만, 타입스크립트는 이를 자동으로 알아채지 못한다.
+`Object.keys`를 사용하여 `options`에 접근하려고 하지만, 타입스크립트는 이를 자동으로 알아채지 못한다.
 
 ### 우회
 
@@ -159,7 +159,7 @@ validateUser(user); // OK!
 
 `User`가 `email` 프로퍼티를 지정하지 않더라도 구조적 타이핑을 통해 불필요한 프로퍼티를 제공할 수 있다.
 
-런타임에 `email` 프로퍼티로 인해 `validator`가 `undefined`가 될 것이고 호출될 때 오류를 발생하게 된다.
+런타임에 `email` 프로퍼티로 인해 `validate`가 `undefined`가 될 것이고 호출될 때 오류를 발생하게 된다.
 
 ![image4](./images/keys_4.png)
 
