@@ -81,6 +81,6 @@ async function getDb() {
 
 ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f9d7fb1e-3137-4377-bcf6-ffc91ab408c5/746b3fc3-3d38-4dfe-b838-69c25e1a37c3/Untitled.png)
 
-<img src="/dongwan/img/usingExample.png">
+<img src="../img/usingExample.png">
 
 나중에 문서가 제대로 나오면 찾아보자..!
