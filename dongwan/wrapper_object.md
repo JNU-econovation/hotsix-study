@@ -16,7 +16,7 @@
 
 ```jsx
 //in JS
-const name = "dongwan";
+const name = 'dongwan';
 console.log(name.length); //7
 console.log(name.charAt(0)); //'d'
 
@@ -29,7 +29,7 @@ name.length 혹은 name.charAt 처럼 프로퍼티를 참고하려고 할 때
 - name = new String(’dongwan')
 - 다음과 같이 래퍼 객체 String 일시적으로 실행되어, name을 객체화 시킨다.
 
-<img src="/img/prototype.png">
+<img src="/img/prototype.png">
 
 - String.prototype을 상속받아 실행
 - **즉, 원시타입을 객체화 시켜주는 객체형 데이터 타입을 래퍼객체 라고 한다.**
@@ -37,8 +37,8 @@ name.length 혹은 name.charAt 처럼 프로퍼티를 참고하려고 할 때
 ## But
 
 ```jsx
-const name = "dongwan";
-name[0] = "a";
+const name = 'dongwan';
+name[0] = 'a';
 console.log(name);
 //dongwan
 ```
