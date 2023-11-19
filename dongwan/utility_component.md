@@ -40,11 +40,11 @@ function CheckBox({ className, labelClassName, label, type, ...props }: CheckBox
 }
 ```
 
-![Untitled](/img/utilityex1.png)
+<img src="./img/utilityex1.png">
 
 부정확한 확장, size라는 타입은 호환 불가라고 한다. 인터페이스 확장에서 오류가 발생한 것 같은데, 인터페이스를 뜯어보자.
 
-![Untitled](/img/utilityex2.png)
+<img src="./img/utilityex2.png>
 
 많은 타입들이 상속되어 있는데 그 중에서 size라는 친구가 이미 상속되어 있는 것을 볼 수 있다.
 
