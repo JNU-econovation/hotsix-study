@@ -18,6 +18,8 @@ interface IExtendBase extends IBase {
 }
 ```
 
+![Alt text](image-1.png)
+
 - `prop_a`가 `IExtendBase`의 `prop_a`를 덮어쓰지 못 함
 - `IExtendBase`의 `prop_a`는 옵셔널이기 때문에 `IBase`의 `prop_a`보다 더 넓은 범위의 타입을 가진다.
 
@@ -28,6 +30,8 @@ interface IExtendBase extends IBase {
   prop_new: string;
 }
 ```
+
+![Alt text](image-2.png)
 
 `IExtendBase`의 `prop_a`가 `string | number`를 갖는데, `IBase`는 `string` 값만 갖기 때문에 에러 발생
 
@@ -59,6 +63,8 @@ type TExtendBase = TBase & {
 };
 ```
 
+![Alt text](image-3.png)
+
 `type` 키워드를 사용하면 위 코드처럼 작성해도 에러가 나지 않는다.
 
 `type`의 확장은 **두 타입에 포함된 모든 속성을 가진 새 타입**(교집합)을 생성하기 때문이다.
@@ -71,9 +77,11 @@ type TExtendBase = TBase & {
 };
 ```
 
-![[Pasted image 20240115223517.png]]
+![Alt text](image-4.png)
 
 `TExtendBase`의 `prop_a`가 더 넓은 값(`string | number`)의 타입을 가질 경우, `TBase`의 `string` 타입만을 가진다.
+
+→ `string` & `string | number` = `string`
 
 # 타입 가드
 
@@ -182,7 +190,7 @@ interface Rectangle {
 type Shape = Square | Rectangle;
 ```
 
-구별 속성(`kind`)에 대해 타입 가드 검사 혹은 `switch`를 사용하면 TypeScript가 특정한 리터럴을 가진 객체를 대상으로 한다.
+구별 속성(`kind`)에 대해 타입 가드 검사 혹은 `switch`를 사용하면 TypeScript가 특정한 리터럴을 가진 객체임을 알게 된다.
 
 ```typescript
 function area(s: Shape) {
@@ -253,7 +261,7 @@ function area(s: Shape) {
 
 조건에 걸리지 않는 블럭(else)을 하나 추가하고 그 블럭에서 추론된 타입이 `never` 타입과 호환되는 것으로 정의하면 된다.
 
-![[Pasted image 20240115212131.png]]
+![Alt text](image-5.png)
 
 ## `switch` 사용
 
@@ -369,11 +377,25 @@ fn(input); // ❌ 속성 'a'의 타입은 호환되지 않는다.
 
 ```ts
 type A = "foo";
+
+// infer을 통해 A의 타입을 추론하고, 추론한 타입이 "foo"인지 확인한다.
 type B = A extends infer C
   ? C extends "foo"
     ? true
     : false // 이 표현식 내에서 'C'는 'A'를 나타낸다.
   : never; // 이 분기는 도달할 수 없지만, 생략도 할 수 없다.
+
+// 직접적으로 A의 타입이 "foo"인지 확인한다.
+type B2 = A extends "foo" ? true : false;
 ```
 
-→ 더 이해하기
+![A가 "foo"일 때](image-6.png)
+→ A가 "foo"일 때
+
+![A가 "foo"가 아닐 때](image-7.png)
+→ A가 "foo"가 아닐 때
+
+![생략 시 에러](image-8.png)
+→ 생략 시 에러
+
+[infer...](https://velog.io/@2ast/TS-infer%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%A7%A7%EA%B2%8C-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90)
